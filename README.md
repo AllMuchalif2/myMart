@@ -109,6 +109,11 @@ MyMart adalah aplikasi e-commerce berbasis web yang dirancang khusus untuk toko 
     - **Midtrans**: Daftar di [https://dashboard.midtrans.com](https://dashboard.midtrans.com)
     - **Groq AI**: Daftar di [https://console.groq.com](https://console.groq.com)
 
+    > **Catatan untuk Midtrans di Localhost**: Karena webhook Midtrans tidak bisa mengakses `localhost`, Anda perlu menggunakan [Ngrok](https://ngrok.com/) untuk mengekspos server lokal Anda ke internet.
+    > 1. Install dan jalankan ngrok: `ngrok http 8000`
+    > 2. Salin URL Forwarding dari ngrok (misal: `https://xxx.ngrok-free.app`)
+    > 3. Masukkan URL tersebut ke konfigurasi Notification URL di Dashboard Midtrans (Settings -> Configuration): `https://xxx.ngrok-free.app/midtrans/callback`
+
 6. **Migrasi Database & Seeding**
 
     ```bash

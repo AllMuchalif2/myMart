@@ -128,6 +128,9 @@ Dokumentasi lengkap alur fungsional aplikasi MyMart, mencakup semua fitur dari a
 -   **Database**
     -   transactions (update snap_token, status, payment_status)
     -   products (restore stock jika gagal)
+-   **Catatan Localhost**: 
+    -   Untuk menerima callback dari Midtrans di lingkungan lokal (localhost), gunakan `ngrok` untuk mengekspos aplikasi. 
+    -   Jalankan `ngrok http 8000` dan masukkan URL ngrok yang didapat (contoh: `https://<id>.ngrok-free.app/midtrans/callback`) ke dalam **Notification URL** di Dashboard Midtrans.
 
 ### Alur Pembayaran COD (Cash on Delivery)
 

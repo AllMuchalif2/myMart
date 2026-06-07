@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\PromoController as AdminPromoController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\TransactionController as AdminTransactionController;
 
-// PWA Routes - Serve via PHP to bypass InfinityFree static file restrictions
+// PWA Routes
 Route::get('/manifest.json', function () {
     $manifest = [
         "name" => "My - Mart",

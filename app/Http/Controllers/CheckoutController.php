@@ -196,16 +196,6 @@ class CheckoutController extends Controller
 
         $transaction = Transaction::where('order_id', $orderId)->where('user_id', Auth::id())->firstOrFail();
 
-        // FORCED SUCCESS for InfinityFree (no callback support)
-        // If user reaches this page with valid order_id, assume payment success
-        if ($transaction->status == 'pending') {
-            $transaction->update([
-                'status' => 'diproses',
-                'payment_status' => 'settlement'
-            ]);
-            Log::info('Success Page: Forced status update (InfinityFree workaround)', ['order_id' => $orderId]);
-        }
-
         return view('checkout.success', ['order' => $transaction]);
     }
 
